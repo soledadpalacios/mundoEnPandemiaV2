@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Mundo en pandemia</title>
+    <script src="mapdata.js"></script>
+    <script src="worldmap.js"></script>
+    <script src="scripts.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+    <style>
+      .card-deck {
+        float: right;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two unequal columns that floats next to each other */
+      .column {
+        float: left;
+        padding: 10px;
+        height: 600px; /* Should be removed. Only for demonstration */
+      }
+
+      .left {
+        width: 35%;
+      }
+
+      .right {
+        width: 65%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="column left" style="background-color: #aaa;">
+          <h1 class="bg-danger text-white">Pandemia Siglo XXI</h1>
+          <h3>Tercer año</h3>
+          <h4 class="bg-success text-white">
+            Instituto Bilingüe Dante Alighieri
+          </h4>
+          <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-primary">como jugar</button
+            ><!--escribir una serie de instrucciones paginadas (puede ser un carrusel)-->
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="sorteoSeisPaises()"
+            >
+              sortear países jugadores</button
+            ><!--aca deberian sortear con math.random-->
+            <button type="button" class="btn btn-primary">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+          </div>
+          <div style="max-width: 100%;">
+            <!-- Keep map above fold -->
+           <div id="map"></div>
+          </div>
+        </div>
+        <div class="column right" style="background-color: #bbb;">
+          <div class="card-group">
+            <div id="cartaPais1" onclick="muestrapais()" class="dice">
+              <div class="card">
+                <div class="card-body">click para jugar con un país</div>
+              </div>
+            </div>
+
+            <div id="cartaPais2" onclick="muestrapais2()" class="dice">
+              <div class="card">
+                <div class="card-body">click para jugar con un país</div>
+              </div>
+            </div>
+           
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
